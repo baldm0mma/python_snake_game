@@ -1,6 +1,8 @@
 # Python Snake Game
 
 Python Snake Game is a Python application in which you can play the classic arcade game Snake.
+
+
 <img width="813" alt="Screen Shot 2022-03-21 at 10 15 09 AM" src="https://user-images.githubusercontent.com/46619047/159304383-f6fdc1f9-4919-44fa-ab8e-3bcc25f3b601.png">
 
 ## Installation
