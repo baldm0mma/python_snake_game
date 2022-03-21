@@ -60,4 +60,5 @@ while game_is_running:
             game_is_running = False
             scoreboard.game_over()
 
+
 screen.exitonclick()

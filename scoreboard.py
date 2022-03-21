@@ -11,11 +11,13 @@ SCORE = 0
 class Scoreboard(Turtle):
     def __init__(self, screen_height, color=COLOR, message=MESSAGE, starting_score=SCORE):
         super().__init__()
+        self.starting_score = starting_score
         self.score = starting_score
         self.color(color)
         self.penup()
         self.goto(0, (screen_height / 2 - 30))
         self.hideturtle()
+        self.message = message
         self.update_message()
 
     def update_score(self, new_score):
@@ -24,7 +26,7 @@ class Scoreboard(Turtle):
         self.update_message()
 
     def update_message(self):
-        self.write(f"{MESSAGE}{self.score}", align=ALIGNMENT, font=FONT)
+        self.write(f"{self.message}{self.score}", align=ALIGNMENT, font=FONT)
 
     def game_over(self):
         self.goto(0, 0)
