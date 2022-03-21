@@ -39,7 +39,7 @@ while game_is_running:
     head_y_cord = snake.head.ycor()
 
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.075)
 
     snake.move()
 
