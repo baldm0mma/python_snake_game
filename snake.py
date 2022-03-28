@@ -57,3 +57,8 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT_ANGLE:
             self.head.setheading(RIGHT_ANGLE)
+
+    def reset(self):
+        self.segments.clear()
+        self.segments = self.create_snake()
+        self.head = self.segments[0]

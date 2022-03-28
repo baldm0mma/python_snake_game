@@ -52,11 +52,13 @@ while game_is_running:
     # Detect collision with boundary
     if head_x_cord >= SCREEN_WIDTH / 2 - 10 or head_x_cord <= -(SCREEN_WIDTH / 2 - 10) or head_y_cord >= SCREEN_HEIGHT / 2 - 10 or head_y_cord <= -(SCREEN_HEIGHT / 2 - 10):
         scoreboard.reset()
+        snake.reset()
 
     # Detect collision with tail
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 7:
             scoreboard.reset()
+            snake.reset()
 
 
 screen.exitonclick()
