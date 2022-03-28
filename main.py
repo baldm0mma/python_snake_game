@@ -14,6 +14,8 @@ screen.setup(width=SCREEN_WIDTH, height=SCREEN_HEIGHT)
 screen.bgcolor("black")
 screen.title("Welcome to Snake!")
 screen.tracer(0)
+# Get player's name
+player_name = screen.textinput("Enter name", "Please enter your name below:")
 
 # Game State
 game_is_running = False
@@ -21,7 +23,7 @@ game_is_running = False
 # Instances
 snake = Snake()
 food = Food(SCREEN_WIDTH, SCREEN_HEIGHT)
-scoreboard = Scoreboard(SCREEN_HEIGHT)
+scoreboard = Scoreboard(SCREEN_HEIGHT, player_name)
 
 screen.update()
 game_is_running = True
