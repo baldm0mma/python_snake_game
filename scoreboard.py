@@ -4,30 +4,32 @@ from turtle import Turtle
 COLOR = "white"
 ALIGNMENT = "center"
 FONT = ("Fira Code", 12, "normal")
-MESSAGE = "Score: "
 SCORE = 0
 
 
 class Scoreboard(Turtle):
-    def __init__(self, screen_height, color=COLOR, message=MESSAGE, starting_score=SCORE):
+    def __init__(self, screen_height, color=COLOR, starting_score=SCORE):
         super().__init__()
         self.starting_score = starting_score
         self.score = starting_score
+        self.high_score = 0
         self.color(color)
         self.penup()
         self.goto(0, (screen_height / 2 - 30))
         self.hideturtle()
-        self.message = message
         self.update_message()
 
     def update_score(self, new_score):
         self.score = new_score
-        self.clear()
         self.update_message()
 
     def update_message(self):
-        self.write(f"{self.message}{self.score}", align=ALIGNMENT, font=FONT)
+        self.clear()
+        self.write(
+            f"Score: {self.score} | High Score: {self.high_score}", align=ALIGNMENT, font=FONT)
 
-    def game_over(self):
-        self.goto(0, 0)
-        self.write("GAME OVER", align=ALIGNMENT, font=FONT)
+    def reset(self):
+        if self.score > self.high_score:
+            self.high_score = self.score
+        self.score = 0
+        self.update_message()
